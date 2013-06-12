@@ -22,12 +22,11 @@
       <div class="navbar-inner">
         <div class="container">
           <div class="row">
-            <div class="span8 offset2">
-              <a href="#" class="brand">{{ SITENAME }}</a>
+            <div class="span12">
+              <h1 class="brand">{{ SITENAME }}</h1>
+              <h2 class="brand">{{ SITESUBTITLE }}</h2>
               <ul class="nav">
-                <li {% block not_blog %}class="active"{% endblock %}><a href="{{ SITEURL }}">Blog</a></li>
                 {% if PAGES %}
-                <li class="divider-vertical">
                 {% for possiblepage in pages %}
                 <li {% if possiblepage == page %}class="active"{% endif %}><a href="{{ SITEURL }}/{{ possiblepage.url }}">{{ possiblepage.title}}</a></li>
                 {% endfor %}
@@ -47,7 +46,7 @@
     </div>
     <div class="container">
       <div class="row">
-        <div class="span8 offset2">
+        <div class="span12">
           {% block content %}
           {% endblock %}
         </div>
@@ -56,12 +55,10 @@
       <hr />
 
       <div class="row">
-        <div class="span8 offset2">
-          
-          <hr>
-          
+        <div class="span12">
           <div id="about">
-            <p>Proudly powered by <a href="http://twitter.github.com/bootstrap/">bootstrap</a>, <a href="http://docs.notmyidea.org/alexis/pelican/">pelican</a>, <a href="http://python.org">python</a> and <a href="http://www.julo.ch/about/">Alex</a>!</p>
+  	    <p>Proudly powered by <a href="http://getpelican.com/">Pelican</a>,
+               which takes great advantage of <a href="http://python.org">Python</a>.</p>
           </div><!-- /#about -->
         </div><!-- /#contentinfo -->
       </div>
