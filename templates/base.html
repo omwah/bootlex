@@ -23,13 +23,19 @@
         <div class="container">
           <div class="row">
             <div class="span12">
+              {% if GITHUB_URL %}
+              <a id="forkme_banner" href="{{GITHUB_URL}}">View on GitHub</a>
+              {% endif %}
+
               <h1 class="brand">{{ SITENAME }}</h1>
               <h2 class="brand">{{ SITESUBTITLE }}</h2>
               <ul class="nav">
+                {% if DISPLAY_PAGES_ON_MENU %} 
                 {% if PAGES %}
                 {% for possiblepage in pages %}
                 <li {% if possiblepage == page %}class="active"{% endif %}><a href="{{ SITEURL }}/{{ possiblepage.url }}">{{ possiblepage.title}}</a></li>
                 {% endfor %}
+                {% endif %}
                 {% endif %}
               </ul>
               {% if MENUITEMS %}

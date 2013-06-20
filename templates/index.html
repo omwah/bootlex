@@ -1,9 +1,9 @@
 {% extends "base.html" %}
-{% block title %}Blog{%endblock%}
+{% block title %}{% if INDEX_PAGE_TITLE %}{{ INDEX_PAGE_TITLE }}{% else %}Blog{% endif %}{%endblock%}
 {% block content %}
 <div id="content">
 {% block content_title %}
-<h1>Blog</h1>
+<h1>{% if INDEX_PAGE_TITLE %}{{ INDEX_PAGE_TITLE }}{% else %}Blog{% endif %}</h1>
 {% endblock %}
 
 <ul class="unstyled">
@@ -24,7 +24,7 @@
                         {% endif %}
                     </div>
                     <div class="span1 offset3">
-                        <a class="btn btn-small" href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title}}">Mehr</a>
+                        <a class="btn btn-small" href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title}}">More</a>
                     </div>
                 </div>
             </div>
